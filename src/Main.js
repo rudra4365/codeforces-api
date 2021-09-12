@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react"
 import "./Main.css"
+import Standings from "./Standings";
 
 const Main = () => {
 
@@ -29,7 +30,7 @@ const Main = () => {
                             <div  className = "indi">
                             {
                                 <a href = {`http://codeforces.com/contest/${contest.id}/standings`}>
-                                <button className = "rt">Standings</button>
+                                <Standings className = "rt" rel = {contest.relativeTimeSeconds} />
                                 </a>
                             }
                             <div>{contest.name}</div>
