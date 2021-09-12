@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react"
 import "./Main.css"
 
-function Main() {
+const Main = () => {
 
     const [contests, setcontests] = useState([]);
 
@@ -13,9 +13,11 @@ function Main() {
         .then(data => {
             setcontests(data.result);
         })
+        .catch((err) => {
+            console.log(err);
+        })
         
-    }, [])
-    console.log(contests);
+    })
     return (
         <div className = "allContests">
             <h1>
